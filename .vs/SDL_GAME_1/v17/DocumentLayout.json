@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_lib\\01_hello_SDL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\C\u002B\u002B\\Visual_studio\\SDL_lib\\01_hello_SDL\\main.cpp",
+              "RelativeDocumentMoniker": "..\\SDL_lib\\01_hello_SDL\\main.cpp",
+              "ToolTip": "D:\\C\u002B\u002B\\Visual_studio\\SDL_lib\\01_hello_SDL\\main.cpp",
+              "RelativeToolTip": "..\\SDL_lib\\01_hello_SDL\\main.cpp",
+              "ViewState": "AQIAAK4AAAAAAAAAAAAIwAoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-03-07T08:06:16.676Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
