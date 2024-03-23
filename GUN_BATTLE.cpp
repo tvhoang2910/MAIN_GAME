@@ -1,4 +1,4 @@
-#define SDL_MAIN_HANDLED
+﻿#define SDL_MAIN_HANDLED
 #include <iostream>
 #include <SDL.h>
 #include <vector>
@@ -6,6 +6,7 @@
 #include <ctime>
 #include <SDL_ttf.h>
 #include <string>
+#include<SDL_image.h>
 using namespace std;
 
 const int SCREEN_WIDTH = 1000;
@@ -40,7 +41,7 @@ void spawnEnemy();
 void moveBullets();
 void moveEnemies();
 void checkCollisions(SDL_Renderer* renderer);
-void drawPlayer(SDL_Renderer* renderer, GameObject player);
+void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTexture);
 void drawBullets(SDL_Renderer* renderer);
 void drawEnemies(SDL_Renderer* renderer);
 void drawScore(SDL_Renderer* renderer, TTF_Font* font, int score);
@@ -52,7 +53,7 @@ int main() {
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     TTF_Init();
-    TTF_Font* font = TTF_OpenFont("arial.ttf", 24);
+    TTF_Font* font = TTF_OpenFont("D:/C++/Visual_studio/SDL_GAME_1/lazy.ttf", 25);
 
     srand(static_cast<unsigned int>(time(NULL)));
 
@@ -66,7 +67,8 @@ int main() {
     }
     SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
     SDL_FreeSurface(backgroundSurface);
-
+    SDL_Surface* playerSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkground.png");
+    SDL_Texture* playerTexture = SDL_CreateTextureFromSurface(renderer, playerSurface);
     while (isRunning) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
@@ -90,13 +92,13 @@ int main() {
 
         // Vẽ background
         SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
-
-        drawPlayer(renderer, player);
+        drawPlayer(renderer, player, playerTexture);
         drawBullets(renderer);
         drawEnemies(renderer);
         drawScore(renderer, font, score);
 
         SDL_RenderPresent(renderer);
+
     }
 
     TTF_CloseFont(font);
@@ -159,7 +161,7 @@ void fireBullet() {
 void spawnEnemy() {
     Enemy enemy;
     enemy.x = rand() % (SCREEN_WIDTH - 40); // Random dich xuat hien
-    enemy.y = 0; 
+    enemy.y = 0;
     enemy.w = 40; // width
     enemy.h = 40; // height
     enemies.push_back(enemy); // Thêm đ?ch vào vector enemies
@@ -220,10 +222,9 @@ void checkCollisions(SDL_Renderer* renderer) {
     }
 }
 
-void drawPlayer(SDL_Renderer* renderer, GameObject player) {
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // Đỏ
+void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTexture) {
     SDL_Rect playerRect = { player.x, player.y, player.w, player.h };
-    SDL_RenderFillRect(renderer, &playerRect);
+    SDL_RenderCopy(renderer, playerTexture, NULL, &playerRect);
 }
 
 void drawBullets(SDL_Renderer* renderer) {
@@ -249,18 +250,20 @@ void drawEnemies(SDL_Renderer* renderer) {
     }
 }
 
+
 void drawScore(SDL_Renderer* renderer, TTF_Font* font, int score) {
-    SDL_Color textColor = { 255, 255, 255 }; // Trắng
-    SDL_Surface* textSurface = TTF_RenderText_Solid(font, ("Score: " + to_string(score)).c_str(), textColor);
+    SDL_Color textColor = { 255, 255, 255 }; // Màu trắng
+    std::string score_str = "Score: " + to_string(score);
+    SDL_Surface* textSurface = TTF_RenderText_Blended(font, score_str.c_str(), textColor);
     SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
 
     int textWidth, textHeight;
     SDL_QueryTexture(textTexture, NULL, NULL, &textWidth, &textHeight);
-
-    SDL_Rect textRect = { 0, 0, textWidth, textHeight }; 
+    SDL_Rect textRect = { 10, 10, textWidth, textHeight }; // Vị trí để hiển thị điểm số
 
     SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
 
     SDL_FreeSurface(textSurface);
     SDL_DestroyTexture(textTexture);
 }
+
