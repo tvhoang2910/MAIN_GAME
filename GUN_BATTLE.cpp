@@ -11,9 +11,9 @@ using namespace std;
 
 const int SCREEN_WIDTH = 1000;
 const int SCREEN_HEIGHT = 600;
-const int PLAYER_SPEED = 1;
-const int BULLET_SPEED = 1;
-const int ENEMY_SPEED = 1;
+const int PLAYER_SPEED = 10;
+const int BULLET_SPEED = 5;
+const int ENEMY_SPEED = 4;
 const int ENEMY_SPAWN_TIMER = 1000;
 
 struct GameObject {
@@ -27,14 +27,14 @@ struct Bullet : public GameObject {
 struct Enemy : public GameObject {
     bool alive;
 };
-GameObject player = { SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50, 40, 40 };
+GameObject player = { SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50, 80, 80 };
 
 vector<Bullet> bullets;
 vector<Enemy> enemies;
 int score = 0;
 Uint32 lastEnemySpawn = 0;
 
-void handleInput(SDL_Renderer* renderer, GameObject& player);
+void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning);
 void movePlayer(GameObject& player);
 void fireBullet();
 void spawnEnemy();
@@ -61,13 +61,13 @@ int main() {
     SDL_Event event;
 
     // Tải và tạo kết cấu background
-    SDL_Surface* backgroundSurface = SDL_LoadBMP("D:/C++/Visual_studio/SDL_GAME_1/x64/Debug/bkground.bmp");
+    SDL_Surface* backgroundSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\new_bkground.png");
     if (backgroundSurface == NULL) {
         cout << "failed";
     }
     SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
     SDL_FreeSurface(backgroundSurface);
-    SDL_Surface* playerSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkground.png");
+    SDL_Surface* playerSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\newbkground.png");
     SDL_Texture* playerTexture = SDL_CreateTextureFromSurface(renderer, playerSurface);
     while (isRunning) {
         while (SDL_PollEvent(&event)) {
@@ -76,7 +76,7 @@ int main() {
             }
         }
 
-        handleInput(renderer, player);
+        handleInput(renderer, player,isRunning);
         movePlayer(player);
         fireBullet();
 
@@ -110,35 +110,57 @@ int main() {
 
     return 0;
 }
-void handleInput(SDL_Renderer* renderer, GameObject& player) {
-    const Uint8* keystate = SDL_GetKeyboardState(NULL);
-    if (keystate[SDL_SCANCODE_LEFT] && player.x > 0) {
-        player.x -= PLAYER_SPEED;
-    }
-    if (keystate[SDL_SCANCODE_RIGHT] && player.x < SCREEN_WIDTH - player.w) {
-        player.x += PLAYER_SPEED;
-    }
-    if (keystate[SDL_SCANCODE_SPACE]) {
-        fireBullet();
+
+void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning) {
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        switch (event.type) {
+        case SDL_QUIT:
+            isRunning = false;
+            break;
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+            case SDLK_UP:
+                player.y -= PLAYER_SPEED; // Di chuyển lên khi nhấn phím mũi tên lên
+                break;
+            case SDLK_DOWN:
+                player.y += PLAYER_SPEED; // Di chuyển xuống khi nhấn phím mũi tên xuống
+                break;
+            case SDLK_LEFT:
+                player.x -= PLAYER_SPEED; // Di chuyển sang trái khi nhấn phím mũi tên trái
+                break;
+            case SDLK_RIGHT:
+                player.x += PLAYER_SPEED; // Di chuyển sang phải khi nhấn phím mũi tên phải
+                break;
+            }
+            break;
+        }
     }
 }
+
+
 
 void movePlayer(GameObject& player) {
     const Uint8* keystate = SDL_GetKeyboardState(NULL);
 
-    if (keystate[SDL_SCANCODE_LEFT] && player.x > 0) {
-        player.x -= PLAYER_SPEED;
+    if (keystate[SDL_SCANCODE_UP] && player.y > 0) {
+        player.y -= PLAYER_SPEED; // Di chuyển lên khi nhấn phím mũi tên lên
     }
-
+    if (keystate[SDL_SCANCODE_DOWN] && player.y < SCREEN_HEIGHT - player.h) {
+        player.y += PLAYER_SPEED; // Di chuyển xuống khi nhấn phím mũi tên xuống
+    }
+    if (keystate[SDL_SCANCODE_LEFT] && player.x > 0) {
+        player.x -= PLAYER_SPEED; // Di chuyển sang trái khi nhấn phím mũi tên trái
+    }
     if (keystate[SDL_SCANCODE_RIGHT] && player.x < SCREEN_WIDTH - player.w) {
-        player.x += PLAYER_SPEED;
+        player.x += PLAYER_SPEED; // Di chuyển sang phải khi nhấn phím mũi tên phải
     }
 }
 
 
 void fireBullet() {
     static int bulletCooldown = 0;
-    const int BULLET_COOLDOWN_TIME = 50; // Thời gian chờ giữa các lần bắn đạn
+    const int BULLET_COOLDOWN_TIME = 10; // Thời gian chờ giữa các lần bắn đạn
 
     if (bulletCooldown > 0) {
         bulletCooldown--;
@@ -148,8 +170,8 @@ void fireBullet() {
         Bullet bullet;
         bullet.x = player.x + player.w / 2 - 2;
         bullet.y = player.y;
-        bullet.w = 20; // dan rong
-        bullet.h = 20; // dan cao
+        bullet.w = 25; // dan rong
+        bullet.h = 25; // dan cao
         bullet.active = true; // danh dau dan dang hoat dong
         bullets.push_back(bullet);
 
@@ -162,9 +184,9 @@ void spawnEnemy() {
     Enemy enemy;
     enemy.x = rand() % (SCREEN_WIDTH - 40); // Random dich xuat hien
     enemy.y = 0;
-    enemy.w = 40; // width
-    enemy.h = 40; // height
-    enemies.push_back(enemy); // Thêm đ?ch vào vector enemies
+    enemy.w = 60; // width
+    enemy.h = 60; // height
+    enemies.push_back(enemy); // Thêm địch vào vector enemies
 }
 
 void moveBullets() {
@@ -208,7 +230,7 @@ void checkCollisions(SDL_Renderer* renderer) {
                         // xu li dan
                         bullets[i].active = false;
                         enemies[j].alive = false;
-                        score += 10; // Tăng đi?m khi trúng đ?ch
+                        score += 10; // Tăng điểm khi trúng địch
                     }
                 }
             }
@@ -228,26 +250,39 @@ void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTe
 }
 
 void drawBullets(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // xanh
+    // Load hình ảnh mới cho đạn
+    SDL_Surface* bulletSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bullet_bkground.png");
+    SDL_Texture* bulletTexture = SDL_CreateTextureFromSurface(renderer, bulletSurface);
+    SDL_FreeSurface(bulletSurface);
 
     for (int i = 0; i < bullets.size(); i++) {
         if (bullets[i].active) {
+            // Vẽ đạn sử dụng texture mới
             SDL_Rect bulletRect = { bullets[i].x, bullets[i].y, bullets[i].w, bullets[i].h };
-            SDL_RenderFillRect(renderer, &bulletRect);
+            SDL_RenderCopy(renderer, bulletTexture, NULL, &bulletRect);
         }
     }
+
+    SDL_DestroyTexture(bulletTexture); // Giải phóng texture sau khi sử dụng
 }
 
 
+
 void drawEnemies(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 255, 122, 255, 255); // Hồng
+    // Load hình ảnh mới cho kẻ địch
+    SDL_Surface* enemySurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\Enemies bkgrond.png");
+    SDL_Texture* enemyTexture = SDL_CreateTextureFromSurface(renderer, enemySurface);
+    SDL_FreeSurface(enemySurface);
 
     for (int i = 0; i < enemies.size(); i++) {
         if (enemies[i].alive) {
+            // Vẽ kẻ địch sử dụng texture mới
             SDL_Rect enemyRect = { enemies[i].x, enemies[i].y, enemies[i].w, enemies[i].h };
-            SDL_RenderFillRect(renderer, &enemyRect);
+            SDL_RenderCopy(renderer, enemyTexture, NULL, &enemyRect);
         }
     }
+
+    SDL_DestroyTexture(enemyTexture); // Giải phóng texture sau khi sử dụng
 }
 
 
