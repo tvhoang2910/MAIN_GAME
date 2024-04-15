@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|solutionrelative:library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|solutionrelative:library.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3892EB6E-83F2-46C3-9FFE-E361466646A1}|SDL_GAME_1\\SDL_GAME_1.vcxproj|solutionrelative:library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -32,33 +32,33 @@
               "RelativeDocumentMoniker": "library.hpp",
               "ToolTip": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.hpp",
               "RelativeToolTip": "library.hpp",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAABIAAAAaAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-11T14:59:42.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "library.cpp",
               "DocumentMoniker": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.cpp",
               "RelativeDocumentMoniker": "library.cpp",
-              "ToolTip": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.cpp*",
-              "RelativeToolTip": "library.cpp*",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAswIAAAAAoAAAA",
+              "ToolTip": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\library.cpp",
+              "RelativeToolTip": "library.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:51:44.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\C\u002B\u002B\\Visual_studio\\SDL_GAME_1\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAG4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-04-11T14:39:02.773Z",
               "EditorCaption": ""

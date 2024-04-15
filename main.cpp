@@ -1,63 +1,61 @@
 ﻿#define SDL_MAIN_HANDLED
-//#include <iostream>
-//#include <SDL.h>
-//#include <vector>
-//#include <cstdlib>
-//#include <ctime>
-//#include <SDL_ttf.h>
-//#include <string>
-//#include<SDL_image.h>
+//#include"D:\C++\Visual_studio\MAIN_GAME\MAIN_GAME\lib.h"
+#include <iostream>
+#include <SDL.h>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <SDL_ttf.h>
+#include <string>
+#include<SDL_image.h>
+using namespace std;
 
-#include "library.hpp"
+const int SCREEN_WIDTH = 1000;
+const int SCREEN_HEIGHT = 600;
+const int PLAYER_SPEED = 10;
+const int BULLET_SPEED = 5;
+const int ENEMY_SPEED = 4;
+const int ENEMY_SPAWN_TIMER = 1000;
 
+struct GameObject {
+    int x, y, w, h;
+};
 
-//using namespace std;
-//
-//const int SCREEN_WIDTH = 1000;
-//const int SCREEN_HEIGHT = 600;
-//const int PLAYER_SPEED = 10;
-//const int BULLET_SPEED = 5;
-//const int ENEMY_SPEED = 4;
-//const int ENEMY_SPAWN_TIMER = 1000;
-//
-//struct GameObject {
-//    int x, y, w, h;
-//};
-//
-//struct Bullet : public GameObject {
-//    bool active;
-//};
-//
-//struct Enemy : public GameObject {
-//    bool alive;
-//};
-//GameObject player = { SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50, 80, 80 };
-//
-//vector<Bullet> bullets;
-//vector<Enemy> enemies;
-//int score = 0;
-//Uint32 lastEnemySpawn = 0;
-//
-//void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning);
-//void movePlayer(GameObject& player);
-//void fireBullet();
-//void spawnEnemy();
-//void moveBullets();
-//void moveEnemies();
-//void checkCollisions(SDL_Renderer* renderer);
-//void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTexture);
-//void drawBullets(SDL_Renderer* renderer);
-//void drawEnemies(SDL_Renderer* renderer);
-//void drawScore(SDL_Renderer* renderer, TTF_Font* font, int score);
-//void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font, SDL_Texture*& backgroundTexture, SDL_Texture*& playerTexture);
-//void cleanup(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font);
-//void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL_Texture* backgroundTexture, SDL_Texture* playerTexture,
-//    GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies, int& score, bool& isRunning);
-//void drawMenu(SDL_Renderer* renderer, TTF_Font* font, SDL_Window* window, const string& backgroundImagePath, SDL_Texture* playerTexture,
-//    GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies, int& score);
-//void countdownTimer(SDL_Renderer* renderer, TTF_Font* font);
-//void drawHearts(SDL_Renderer* renderer);
+struct Bullet : public GameObject {
+    bool active;
+};
 
+struct Enemy : public GameObject {
+    bool alive;
+};
+GameObject player = { SCREEN_WIDTH / 2, SCREEN_HEIGHT - 50, 80, 80 };
+
+vector<Bullet> bullets;
+vector<Enemy> enemies;
+int score = 0;
+Uint32 lastEnemySpawn = 0;
+SDL_Texture* heartTexture = nullptr;
+void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning);
+void movePlayer(GameObject& player);
+void fireBullet();
+void spawnEnemy();
+void moveBullets();
+void moveEnemies();
+void checkCollisions(SDL_Renderer* renderer);
+void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTexture);
+void drawBullets(SDL_Renderer* renderer);
+void drawEnemies(SDL_Renderer* renderer);
+void drawScore(SDL_Renderer* renderer, TTF_Font* font, int score);
+void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font, SDL_Texture*& backgroundTexture, SDL_Texture*& playerTexture);
+void cleanup(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font);
+void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL_Texture* backgroundTexture, SDL_Texture* playerTexture,
+    GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies, int& score, bool& isRunning);
+void drawMenu(SDL_Renderer* renderer, TTF_Font* font, SDL_Window* window, const string& backgroundImagePath, SDL_Texture* playerTexture,
+    GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies, int& score);
+void countdownTimer(SDL_Renderer* renderer, TTF_Font* font);
+void drawHearts(SDL_Renderer* renderer, int numHeartsRemaining);
+void moveEnemiesAndCheckHearts(SDL_Renderer* renderer, int& numHeartsRemaining, bool& isRunning, int& score);
+void drawEndGameMenu(SDL_Renderer* renderer, TTF_Font* font);
 int main(int argc, char* argv[]) {
     SDL_Window* window;
     SDL_Renderer* renderer;
@@ -66,17 +64,13 @@ int main(int argc, char* argv[]) {
     SDL_Texture* backgroundTexture;
     const string backgroundImagePath = "D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkgd_menu.png"; // Đường dẫn menu background
 
-    GameProperties game;
-    game.initializeSDL(window, renderer, font, backgroundTexture, playerTexture);
-
-
-    
+    initializeSDL(window, renderer, font, backgroundTexture, playerTexture);
 
     bool inMenu = true;
     SDL_Event event;
 
     while (inMenu) {
-        game.drawMenu(renderer, font, window, backgroundImagePath, playerTexture, game.player, game.lastEnemySpawn, game.bullets, game.enemies, game.score);
+        drawMenu(renderer, font, window, backgroundImagePath, playerTexture, player, lastEnemySpawn, bullets, enemies, score);
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 inMenu = false; // Thoát khỏi menu nếu đóng cửa sổ
@@ -90,10 +84,10 @@ int main(int argc, char* argv[]) {
                     bool isRunning = true;
 
                     // Hiển thị đếm ngược trước khi bắt đầu trò chơi
-                    game.countdownTimer(renderer, font);
+                    countdownTimer(renderer, font);
 
-                    game.runGameLoop(renderer, window, font, backgroundTexture, playerTexture,
-                        game.player, game.lastEnemySpawn, game.bullets, game.enemies, game.score, isRunning);
+                    runGameLoop(renderer, window, font, backgroundTexture, playerTexture,
+                        player, lastEnemySpawn, bullets, enemies, score, isRunning);
                     inMenu = false; // Thoát khỏi menu sau khi kết thúc trò chơi
                 }
                 else if (mouseX >= 400 && mouseX <= 600 && mouseY >= 300 && mouseY <= 350) {
@@ -103,14 +97,11 @@ int main(int argc, char* argv[]) {
             }
         }
     }
-    
-    game.cleanup(window, renderer, font);
+
+    cleanup(window, renderer, font);
 
     return 0;
 }
-
-
-/*
 void drawMenu(SDL_Renderer* renderer, TTF_Font* font, SDL_Window* window, const string& backgroundImagePath, SDL_Texture* playerTexture,
     GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies, int& score) {
     SDL_Surface* backgroundSurface = IMG_Load(backgroundImagePath.c_str());
@@ -179,6 +170,15 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
 
     SDL_Surface* playerSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\newbkground.png");
     playerTexture = SDL_CreateTextureFromSurface(renderer, playerSurface);
+    SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
+    if (heartSurface == nullptr) {
+        cerr << "Failed to load heart image: " << IMG_GetError() << endl;
+        // Xử lý khi không thể tải hình ảnh
+    }
+    else {
+        heartTexture = SDL_CreateTextureFromSurface(renderer, heartSurface);
+        SDL_FreeSurface(heartSurface);
+    }
 }
 
 void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning) {
@@ -366,7 +366,7 @@ void drawScore(SDL_Renderer* renderer, TTF_Font* font, int score) {
 
     int textWidth, textHeight;
     SDL_QueryTexture(textTexture, NULL, NULL, &textWidth, &textHeight);
-    SDL_Rect textRect = { 10, 10, textWidth, textHeight }; // Vị trí để hiển thị điểm số
+    SDL_Rect textRect = { 10, 10, textWidth, textHeight }; // vi tri hien diem so
 
     SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
 
@@ -384,6 +384,8 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
     SDL_Texture* playerTexture, GameObject& player, Uint32& lastEnemySpawn, vector<Bullet>& bullets, vector<Enemy>& enemies,
     int& score, bool& isRunning) {
     SDL_Event event;
+    int numHeartsRemaining = 3; // Số lượng trái tim ban đầu
+
     while (isRunning) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
@@ -402,7 +404,8 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
         }
 
         moveBullets();
-        moveEnemies();
+        moveEnemiesAndCheckHearts(renderer, numHeartsRemaining, isRunning, score);// Di chuyển enemy và kiểm tra trái tim
+
         checkCollisions(renderer);
 
         // Vẽ background
@@ -411,13 +414,50 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
         drawBullets(renderer);
         drawEnemies(renderer);
         drawScore(renderer, font, score);
+        drawHearts(renderer, numHeartsRemaining); // Vẽ số lượng trái tim còn lại
 
         SDL_RenderPresent(renderer);
+
+        if (numHeartsRemaining <= 0) {
+            isRunning = false; // Kết thúc trò chơi khi hết trái tim
+            // Hiển thị thông báo "Game Over" hoặc thực hiện các hành động khác khi trò chơi kết thúc
+            SDL_Color textColor = { 0, 255, 0 };
+            // Màu green
+            TTF_SetFontSize(font, 50); // Đặt kích thước chữ cho thông báo "Game Over"
+            SDL_Surface* gameOverSurface = TTF_RenderText_Blended(font, "Game Over!", textColor);
+            SDL_Texture* gameOverTexture = SDL_CreateTextureFromSurface(renderer, gameOverSurface);
+            int textWidth, textHeight;
+            SDL_QueryTexture(gameOverTexture, NULL, NULL, &textWidth, &textHeight);
+            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // Vị trí để hiển thị thông báo "Game Over"
+            SDL_RenderCopy(renderer, gameOverTexture, NULL, &textRect);
+            SDL_FreeSurface(gameOverSurface);
+            SDL_DestroyTexture(gameOverTexture);
+            SDL_RenderPresent(renderer);
+            SDL_Delay(3000); // Dừng chương trình trong 3 giây trước khi thoát
+        }
+        if (score >= 200) {
+            isRunning = false; // Kết thúc trò chơi khi đạt điều kiện chiến thắng
+            // Hiển thị thông báo "You Win" hoặc thực hiện các hành động khác khi trò chơi kết thúc
+            SDL_Color textColor = { 0, 255, 0 }; // Màu xanh lá cây
+            TTF_SetFontSize(font, 50); // Đặt kích thước chữ cho thông báo "You Win"
+            SDL_Surface* youWinSurface = TTF_RenderText_Blended(font, "You Win", textColor);
+            SDL_Texture* youWinTexture = SDL_CreateTextureFromSurface(renderer, youWinSurface);
+            int textWidth, textHeight;
+            SDL_QueryTexture(youWinTexture, NULL, NULL, &textWidth, &textHeight);
+            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // Vị trí để hiển thị thông báo "You Win"
+            SDL_RenderCopy(renderer, youWinTexture, NULL, &textRect);
+            SDL_FreeSurface(youWinSurface);
+            SDL_DestroyTexture(youWinTexture);
+            SDL_RenderPresent(renderer);
+            SDL_Delay(3000); // Dừng chương trình trong 3 giây trước khi thoát
+        }
+
     }
 
     // Dọn dẹp và thoát chương trình sau khi người dùng thoát
     cleanup(window, renderer, font);
 }
+
 void countdownTimer(SDL_Renderer* renderer, TTF_Font* font) {
     // Load hình ảnh background
     SDL_Surface* backgroundSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\Screenshot 2024-04-06 121850.png");
@@ -470,33 +510,91 @@ void countdownTimer(SDL_Renderer* renderer, TTF_Font* font) {
     // Giải phóng texture của background
     SDL_DestroyTexture(backgroundTexture);
 }
-void drawHearts(SDL_Renderer* renderer) {
-    // Load hình ảnh heart
-    SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
-    if (heartSurface == nullptr) {
+void drawHearts(SDL_Renderer* renderer, int numHeartsRemaining) {
+    //  heart's position and size
+    int heartWidth = 50;
+    int heartHeight = 50;
+    int heartMargin = 5; // hearts's length
+
+    // Vẽ số lượng trái tim còn lại
+    int startX = SCREEN_WIDTH - (numHeartsRemaining * (heartWidth + heartMargin)) - 10; // 10 là khoảng cách từ mép phải
+    int startY = 10; // 10 là khoảng cách từ mép trên
+    for (int i = 0; i < numHeartsRemaining; i++) {
+        SDL_Rect heartRect = { startX + i * (heartWidth + heartMargin), startY, heartWidth, heartHeight };
+        SDL_RenderCopy(renderer, heartTexture, NULL, &heartRect); // Sử dụng lại texture đã tạo
+    }
+}
+void moveEnemiesAndCheckHearts(SDL_Renderer* renderer, int& numHeartsRemaining, bool& isRunning, int& score) {
+    for (int i = 0; i < enemies.size(); i++) {
+        enemies[i].y += ENEMY_SPEED; // Di chuyển địch xuống dưới theo hướng y
+
+        bool enemyHitByBullet = false; // Biến kiểm tra xem kẻ địch có bị đánh bởi đạn hay không
+
+        for (int j = 0; j < bullets.size(); j++) {
+            if (bullets[j].active && isColliding(bullets[j], enemies[i])) {
+                bullets[j].active = false; // Đánh dấu đạn đã trúng kẻ địch
+                enemies.erase(enemies.begin() + i); // Xóa kẻ địch khi bị trúng đạn
+                i--; // Giảm chỉ số i đi 1 sau khi xóa phần tử
+                enemyHitByBullet = true; // Đánh dấu kẻ địch bị trúng đạn
+                score += 10; // Tăng điểm khi trúng địch
+                break; // Thoát khỏi vòng lặp khi kẻ địch bị trúng đạn
+            }
+        }
+
+        if (!enemyHitByBullet && enemies[i].y > SCREEN_HEIGHT) {
+            enemies.erase(enemies.begin() + i); // Xóa kẻ địch khi thoát khỏi màn hình
+            i--; // Giảm chỉ số i đi 1 sau khi xóa phần tử
+            numHeartsRemaining--; // Giảm số lượng trái tim nếu kẻ địch thoát ra khỏi màn hình
+            if (numHeartsRemaining <= 0) {
+                isRunning = false; // Kết thúc trò chơi khi hết trái tim
+                break; // Thoát khỏi vòng lặp khi trò chơi kết thúc
+            }
+        }
+    }
+}
+
+void drawEndGameMenu(SDL_Renderer* renderer, TTF_Font* font) {
+    // Load hình ảnh background
+    const string backgroundImagePath = "D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkground.bmp";
+    SDL_Surface* backgroundSurface = IMG_Load(backgroundImagePath.c_str());
+    if (backgroundSurface == nullptr) {
         // Xử lý khi không thể tải hình ảnh
-        cerr << "Failed to load heart image: " << IMG_GetError() << endl;
+        cerr << "Failed to load background image: " << IMG_GetError() << endl;
         return;
     }
 
-    SDL_Texture* heartTexture = SDL_CreateTextureFromSurface(renderer, heartSurface);
-    SDL_FreeSurface(heartSurface);
+    SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
+    SDL_FreeSurface(backgroundSurface);
 
-    // Vị trí và kích thước của heart
-    int heartWidth = 2;
-    int heartHeight = 2;
-    int heartMargin = 5; // Khoảng cách giữa các heart
-    int numHearts = 3; // Số lượng heart
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
 
-    // Vẽ hearts vào góc bên phải
-    int startX = SCREEN_WIDTH - (numHearts * (heartWidth + heartMargin)) - 10; // 10 là khoảng cách từ mép phải
-    int startY = 10; // 10 là khoảng cách từ mép trên
-    for (int i = 0; i < numHearts; i++) {
-        SDL_Rect heartRect = { startX + i * (heartWidth + heartMargin), startY, heartWidth, heartHeight };
-        SDL_RenderCopy(renderer, heartTexture, NULL, &heartRect);
-    }
+    // Vẽ background
+    SDL_Rect backgroundRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
+    SDL_RenderCopy(renderer, backgroundTexture, NULL, &backgroundRect);
 
-    SDL_DestroyTexture(heartTexture);
+    // Vẽ menu "Play again" và "Exit"
+    SDL_Color textColor = { 255, 255, 255 }; // Màu trắng
+    TTF_SetFontStyle(font, TTF_STYLE_BOLD); // Đặt kiểu chữ in đậm
+    TTF_SetFontSize(font, 50); // Đặt kích thước chữ cho "Play again" và "Exit"
+
+    // Vẽ "Play again"
+    SDL_Surface* playAgainSurface = TTF_RenderText_Blended(font, "Play again", textColor);
+    SDL_Texture* playAgainTexture = SDL_CreateTextureFromSurface(renderer, playAgainSurface);
+    SDL_Rect playAgainRect = { (SCREEN_WIDTH - playAgainSurface->w) / 2, 200, playAgainSurface->w, playAgainSurface->h }; // Căn giữa theo chiều ngang
+    SDL_RenderCopy(renderer, playAgainTexture, NULL, &playAgainRect);
+    SDL_FreeSurface(playAgainSurface);
+    SDL_DestroyTexture(playAgainTexture);
+
+    // Vẽ "Exit"
+    SDL_Surface* exitSurface = TTF_RenderText_Blended(font, "Exit", textColor);
+    SDL_Texture* exitTexture = SDL_CreateTextureFromSurface(renderer, exitSurface);
+    SDL_Rect exitRect = { (SCREEN_WIDTH - exitSurface->w) / 2, 300, exitSurface->w, exitSurface->h }; // Căn giữa theo chiều ngang
+    SDL_RenderCopy(renderer, exitTexture, NULL, &exitRect);
+    SDL_FreeSurface(exitSurface);
+    SDL_DestroyTexture(exitTexture);
+
+    SDL_RenderPresent(renderer);
+
+    SDL_DestroyTexture(backgroundTexture);
 }
-
-*/
