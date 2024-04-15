@@ -1,0 +1,3 @@
+﻿  main.cpp
+  library.cpp
+D:\C++\Visual_studio\SDL_lib\01_hello_SDL\main.cpp(3,10): error C1083: Cannot open include file: 'SDL.h': No such file or directory
