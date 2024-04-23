@@ -19,11 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\library.cpp" />
     <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="BulletLogic.cpp" />
+    <ClCompile Include="EnemyLogic.cpp" />
+    <ClCompile Include="GameFlow.cpp" />
+    <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="GameRendering.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\library.hpp" />
+    <ClInclude Include="..\GameObject.h" />
+    <ClInclude Include="BulletLogic.h" />
+    <ClInclude Include="EnemyLogic.h" />
+    <ClInclude Include="GameFlow.h" />
+    <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="GameRendering.h" />
+    <ClInclude Include="Globals.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

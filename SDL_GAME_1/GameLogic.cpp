@@ -1,0 +1,44 @@
+#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameLogic.h"
+#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
+void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning) {
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        switch (event.type) {
+        case SDL_QUIT:
+            isRunning = false;
+            break;
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+            case SDLK_UP:
+                player.y -= PLAYER_SPEED; // Di chuy?n lên khi nh?n phím m?i tên lên
+                break;
+            case SDLK_DOWN:
+                player.y += PLAYER_SPEED; // Di chuy?n xu?ng khi nh?n phím m?i tên xu?ng
+                break;
+            case SDLK_LEFT:
+                player.x -= PLAYER_SPEED; // Di chuy?n sang trái khi nh?n phím m?i tên trái
+                break;
+            case SDLK_RIGHT:
+                player.x += PLAYER_SPEED; // Di chuy?n sang ph?i khi nh?n phím m?i tên ph?i
+                break;
+            }
+            break;
+        }
+    }
+}
+void movePlayer(GameObject& player) {
+    const Uint8* keystate = SDL_GetKeyboardState(NULL);
+
+    if (keystate[SDL_SCANCODE_UP] && player.y > 0) {
+        player.y -= PLAYER_SPEED; // Di chuy?n lên khi nh?n phím m?i tên lên
+    }
+    if (keystate[SDL_SCANCODE_DOWN] && player.y < SCREEN_HEIGHT - player.h) {
+        player.y += PLAYER_SPEED; // Di chuy?n xu?ng khi nh?n phím m?i tên xu?ng
+    }
+    if (keystate[SDL_SCANCODE_LEFT] && player.x > 0) {
+        player.x -= PLAYER_SPEED; // Di chuy?n sang trái khi nh?n phím m?i tên trái
+    }
+    if (keystate[SDL_SCANCODE_RIGHT] && player.x < SCREEN_WIDTH - player.w) {
+        player.x += PLAYER_SPEED; // Di chuy?n sang ph?i khi nh?n phím m?i tên ph?i
+    }
+}
