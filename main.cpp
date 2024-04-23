@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     TTF_Font* font;
     SDL_Texture* playerTexture;
     SDL_Texture* backgroundTexture;
-    const string backgroundImagePath = "D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkgd_menu.png"; // Đường dẫn menu background
+    const string backgroundImagePath = "D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkgd_menu.png"; 
 
     initializeSDL(window, renderer, font, backgroundTexture, playerTexture);
 
@@ -74,7 +74,9 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     TTF_Init();
-    font = TTF_OpenFont("D:/C++/Visual_studio/SDL_GAME_1/lazy.ttf", 25);
+    font = TTF_OpenFont("D:/C++/Visual_studio/SDL_GAME_1/OpenSans-ExtraBold.ttf", 25);
+
+
 
     srand(static_cast<unsigned int>(time(NULL)));
 

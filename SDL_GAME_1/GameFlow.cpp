@@ -53,7 +53,7 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
 
         if (numHeartsRemaining <= 0) {
             isRunning = false; 
-            SDL_Color textColor = { 0, 255, 0 };
+            SDL_Color textColor = { 255, 255, 255 };
             // Màu green
             TTF_SetFontSize(font, 50); 
             SDL_Surface* gameOverSurface = TTF_RenderText_Blended(font, "Game Over!", textColor);
@@ -73,7 +73,7 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
         if (score >= 200) {
             isRunning = false; 
             
-            SDL_Color textColor = { 0, 255, 0 };
+            SDL_Color textColor = { 255, 255, 255 };
             TTF_SetFontSize(font, 50); 
             SDL_Surface* youWinSurface = TTF_RenderText_Blended(font, "You Win", textColor);
             SDL_Texture* youWinTexture = SDL_CreateTextureFromSurface(renderer, youWinSurface);
@@ -211,27 +211,27 @@ void drawMenu(SDL_Renderer* renderer, TTF_Font* font, SDL_Window* window, const 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        // V? background
+        
         SDL_Rect backgroundRect = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
         SDL_RenderCopy(renderer, backgroundTexture, NULL, &backgroundRect);
 
-        // V? menu
-        SDL_Color textColor = { 255, 255, 255 }; // Màu tr?ng
+       
+        SDL_Color textColor = { 255, 255, 255 }; 
 
-        // init "Start"
-        TTF_SetFontStyle(font, TTF_STYLE_BOLD); // Ð?t ki?u ch? in ð?m
-        TTF_SetFontSize(font, 50); //  kích thý?c c?a ch? "start" v?i "exit"
+        
+        TTF_SetFontStyle(font, TTF_STYLE_BOLD); 
+        TTF_SetFontSize(font, 50); 
         SDL_Surface* startSurface = TTF_RenderText_Blended(font, "Start", textColor);
         SDL_Texture* startTexture = SDL_CreateTextureFromSurface(renderer, startSurface);
-        SDL_Rect startRect = { (SCREEN_WIDTH - startSurface->w) / 2, 200, startSurface->w, startSurface->h }; // Cãn gi?a theo chi?u ngang
+        SDL_Rect startRect = { (SCREEN_WIDTH - startSurface->w) / 2, 200, startSurface->w, startSurface->h }; 
         SDL_RenderCopy(renderer, startTexture, NULL, &startRect);
         SDL_FreeSurface(startSurface);
         SDL_DestroyTexture(startTexture);
 
-        // init "Exit"
+        
         SDL_Surface* exitSurface = TTF_RenderText_Blended(font, "Exit", textColor);
         SDL_Texture* exitTexture = SDL_CreateTextureFromSurface(renderer, exitSurface);
-        SDL_Rect exitRect = { (SCREEN_WIDTH - exitSurface->w) / 2, 300, exitSurface->w, exitSurface->h }; // Cãn gi?a theo chi?u ngang
+        SDL_Rect exitRect = { (SCREEN_WIDTH - exitSurface->w) / 2, 300, exitSurface->w, exitSurface->h }; 
         SDL_RenderCopy(renderer, exitTexture, NULL, &exitRect);
         SDL_FreeSurface(exitSurface);
         SDL_DestroyTexture(exitTexture);
