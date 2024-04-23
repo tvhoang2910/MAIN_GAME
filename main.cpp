@@ -37,26 +37,26 @@ int main(int argc, char* argv[]) {
         drawMenu(renderer, font, window, backgroundImagePath, playerTexture, player, lastEnemySpawn, bullets, enemies, score);
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
-                inMenu = false; // Thoát khỏi menu nếu đóng cửa sổ
+                inMenu = false;
             }
             else if (event.type == SDL_MOUSEBUTTONDOWN) {
                 int mouseX, mouseY;
                 SDL_GetMouseState(&mouseX, &mouseY);
 
                 if (mouseX >= 400 && mouseX <= 600 && mouseY >= 200 && mouseY <= 250) {
-                    //  chọn "Start"
+                   
                     bool isRunning = true;
 
-                    // Hiển thị đếm ngược trước khi bắt đầu trò chơi
+                    
                     countdownTimer(renderer, font);
 
                     runGameLoop(renderer, window, font, backgroundTexture, playerTexture,
                         player, lastEnemySpawn, bullets, enemies, score, isRunning);
-                    inMenu = false; // Thoát khỏi menu sau khi kết thúc trò chơi
+                    inMenu = false; 
                 }
                 else if (mouseX >= 400 && mouseX <= 600 && mouseY >= 300 && mouseY <= 350) {
-                    //  chọn "Exit"
-                    inMenu = false; // Thoát khỏi menu
+                    
+                    inMenu = false; 
                 }
             }
         }
@@ -78,7 +78,7 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
 
     srand(static_cast<unsigned int>(time(NULL)));
 
-    // Load hình ảnh
+   
     SDL_Surface* backgroundSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\new_bkground.png");
     backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
     SDL_FreeSurface(backgroundSurface);
@@ -88,7 +88,7 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
     SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
     if (heartSurface == nullptr) {
         cerr << "Failed to load heart image: " << IMG_GetError() << endl;
-        // Xử lý khi không thể tải hình ảnh
+       
     }
     else {
         heartTexture = SDL_CreateTextureFromSurface(renderer, heartSurface);

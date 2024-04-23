@@ -10,16 +10,16 @@ void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning) {
         case SDL_KEYDOWN:
             switch (event.key.keysym.sym) {
             case SDLK_UP:
-                player.y -= PLAYER_SPEED; // Di chuy?n lên khi nh?n phím m?i tên lên
+                player.y -= PLAYER_SPEED; 
                 break;
             case SDLK_DOWN:
-                player.y += PLAYER_SPEED; // Di chuy?n xu?ng khi nh?n phím m?i tên xu?ng
+                player.y += PLAYER_SPEED; 
                 break;
             case SDLK_LEFT:
-                player.x -= PLAYER_SPEED; // Di chuy?n sang trái khi nh?n phím m?i tên trái
+                player.x -= PLAYER_SPEED; 
                 break;
             case SDLK_RIGHT:
-                player.x += PLAYER_SPEED; // Di chuy?n sang ph?i khi nh?n phím m?i tên ph?i
+                player.x += PLAYER_SPEED; 
                 break;
             }
             break;
@@ -30,15 +30,15 @@ void movePlayer(GameObject& player) {
     const Uint8* keystate = SDL_GetKeyboardState(NULL);
 
     if (keystate[SDL_SCANCODE_UP] && player.y > 0) {
-        player.y -= PLAYER_SPEED; // Di chuy?n lên khi nh?n phím m?i tên lên
+        player.y -= PLAYER_SPEED; 
     }
     if (keystate[SDL_SCANCODE_DOWN] && player.y < SCREEN_HEIGHT - player.h) {
-        player.y += PLAYER_SPEED; // Di chuy?n xu?ng khi nh?n phím m?i tên xu?ng
+        player.y += PLAYER_SPEED; 
     }
     if (keystate[SDL_SCANCODE_LEFT] && player.x > 0) {
-        player.x -= PLAYER_SPEED; // Di chuy?n sang trái khi nh?n phím m?i tên trái
+        player.x -= PLAYER_SPEED; 
     }
     if (keystate[SDL_SCANCODE_RIGHT] && player.x < SCREEN_WIDTH - player.w) {
-        player.x += PLAYER_SPEED; // Di chuy?n sang ph?i khi nh?n phím m?i tên ph?i
+        player.x += PLAYER_SPEED; 
     }
 }

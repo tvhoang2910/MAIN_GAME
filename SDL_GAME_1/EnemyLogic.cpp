@@ -25,10 +25,10 @@ void checkCollisions(SDL_Renderer* renderer) {
             for (int j = 0; j < enemies.size(); j++) {
                 if (enemies[j].alive) {
                     if (isColliding(bullets[i], enemies[j])) {
-                        // process ð?n
+                        
                         bullets[i].active = false;
                         enemies[j].alive = false;
-                        score += 10; // Tãng ði?m khi trúng ð?ch
+                        score += 10; 
                     }
                 }
             }
