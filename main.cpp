@@ -1,6 +1,10 @@
 ﻿#define SDL_MAIN_HANDLED
 #include "D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
 #include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameFlow.h"
+
+#include <filesystem>
+#include <iostream>
+
 using namespace std;
 
 const int SCREEN_WIDTH = 1000;
@@ -26,7 +30,7 @@ int main(int argc, char* argv[]) {
     TTF_Font* font;
     SDL_Texture* playerTexture;
     SDL_Texture* backgroundTexture;
-    const string backgroundImagePath = "D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bkgd_menu.png"; 
+    const string backgroundImagePath = "photos\\bkgd_menu.png"; 
 
     initializeSDL(window, renderer, font, backgroundTexture, playerTexture);
 
@@ -81,13 +85,18 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
     srand(static_cast<unsigned int>(time(NULL)));
 
    
-    SDL_Surface* backgroundSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\new_bkground.png");
+    SDL_Surface* backgroundSurface = IMG_Load("photos\\new_bkground.png");
+    // SDL_Surface* backgroundSurface = IMG_Load("new_bkground.png");
     backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
     SDL_FreeSurface(backgroundSurface);
 
-    SDL_Surface* playerSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\newbkground.png");
+    SDL_Surface* playerSurface = IMG_Load("photos\\newbkground.png");
     playerTexture = SDL_CreateTextureFromSurface(renderer, playerSurface);
-    SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
+    // SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
+
+    std::cout << "Current path is " << std::filesystem::current_path() << '\n'; // (1)
+
+    SDL_Surface* heartSurface = IMG_Load("photos\\heart.png");
     if (heartSurface == nullptr) {
         cerr << "Failed to load heart image: " << IMG_GetError() << endl;
        

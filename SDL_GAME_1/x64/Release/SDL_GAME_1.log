@@ -1,3 +1,5 @@
-﻿  main.cpp
-  library.cpp
-D:\C++\Visual_studio\SDL_lib\01_hello_SDL\main.cpp(3,10): error C1083: Cannot open include file: 'SDL.h': No such file or directory
+﻿  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 396 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SDL_GAME_1.vcxproj -> D:\C++\Visual_studio\SDL_GAME_1\x64\Release\SDL_GAME_1.exe

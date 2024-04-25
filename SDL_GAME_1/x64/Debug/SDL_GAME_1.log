@@ -1,3 +1,4 @@
-﻿  GameFlow.cpp
-D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameFlow.cpp(34,42): warning C4018: '>=': signed/unsigned mismatch
+﻿  main.cpp
+  GameRendering.cpp
+  Generating Code...
   SDL_GAME_1.vcxproj -> D:\C++\Visual_studio\SDL_GAME_1\x64\Debug\SDL_GAME_1.exe

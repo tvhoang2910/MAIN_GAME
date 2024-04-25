@@ -9,7 +9,7 @@ void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTe
 
 void drawBullets(SDL_Renderer* renderer) {
     
-    SDL_Surface* bulletSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\bullet_bkground.png");
+    SDL_Surface* bulletSurface = IMG_Load("photos\\bullet_bkground.png");
     SDL_Texture* bulletTexture = SDL_CreateTextureFromSurface(renderer, bulletSurface);
     SDL_FreeSurface(bulletSurface);
 
@@ -28,7 +28,7 @@ void drawBullets(SDL_Renderer* renderer) {
 
 void drawEnemies(SDL_Renderer* renderer) {
     
-    SDL_Surface* enemySurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\Enemies bkgrond.png");
+    SDL_Surface* enemySurface = IMG_Load("photos\\Enemies bkgrond.png");
     SDL_Texture* enemyTexture = SDL_CreateTextureFromSurface(renderer, enemySurface);
     SDL_FreeSurface(enemySurface);
 
