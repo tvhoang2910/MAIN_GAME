@@ -15,14 +15,7 @@ Gun Battle là một trò chơi bắn súng đơn giản được xây dựng b�
 
 #Nguồn 
 Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên google và 1 số là ảnh screenshot.
-Background đầu tiên với “Start” và “Exit” là sử dụng font để viết : x64/Debug/bkgd_menu.png
-Background hướng dẫn  là : x64/Debug/Screenshot 2024-04-06 121850.png 
-Background game chính : x64/Debug/new_bkground.png
-Background “End game” : x64/Debug/bkground.bmp
-Player : x64/Debug/newbkground.png 
-Enemies : x64/Debug/Enemies bkgrond.png
-Trái tim : x64/Debug/heart.png
-Đạn : x64/Debug/bullet_bkground.png
+
 
 # Bắt đầu game
 - **Background Đầu Tiên (Menu):** 
