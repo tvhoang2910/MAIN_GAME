@@ -21,6 +21,7 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên go
 - **Background Đầu Tiên (Menu):** 
   - File: `x64/Debug/bkgd_menu.png`
   - Mô tả: Background này chứa các lựa chọn "Start" và "Exit" được viết bằng font.
+  - ![bkgd_menu](x64/Debug/bkgd_menu.png)
 - **Background Hướng Dẫn:**
   - File: `x64/Debug/Screenshot 2024-04-06 121850.png`
   - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin : 
@@ -28,12 +29,15 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên go
 -"Reach 200 points to emerge victorious!"
 - "Lose 3 hearts and face defeat!"
  -"Use the arrow keys to navigate your path."
+   ![hướng dẫn](x64/Debug/Screenshot 2024-04-06 121850.png)
 - **Background Game Chính:**
   - File: `x64/Debug/new_bkground.png`
   - Mô tả: Background chính trong trò chơi, nơi diễn ra các hoạt động chính của trò chơi.
+  -  ![game chính](x64/Debug/new_bkground.png)
 - **Background "End Game":**
   - File: `x64/Debug/bkground.bmp`
   - Mô tả: Background được hiển thị khi trò chơi kết thúc.
+  - ![end game](x64/Debug/bkground.bmp)
 **Player:**
   - File: `x64/Debug/newbkground.png`
   - Mô tả: Hình ảnh đại diện cho nhân vật người chơi trong trò chơi.
