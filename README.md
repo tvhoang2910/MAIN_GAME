@@ -57,3 +57,9 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
 - **Đạn:**
   - File: `SDL_GAME_1/resources/bullet_bkground.png`
   - Mô tả: Hình ảnh đại diện cho đạn trong trò chơi.
+- ## Source code
+  - main.cpp : - Khởi tạo các đối tượng SDL cần thiết.
+               - Vào vòng lặp menu chính, vẽ menu và xử lý sự kiện click chuột.
+               - Hàm initializeSDL():
+  - Globals.h : Chứa các khai báo biến,mảng toàn cục và 1 số thư viện cần sử dụng.
+  
