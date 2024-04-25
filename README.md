@@ -24,11 +24,11 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
 
 - **Background Hướng Dẫn:**
   - File: `SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png`
-  - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin : 
-  -"Welcome to Gun Battle!"
-  -"Reach 200 points to emerge victorious!"
-  - "Lose 3 hearts and face defeat!"
-  -"Use the arrow keys to navigate your path."
+  - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin 
+  - Welcome to Gun Battle!
+  - Reach 200 points to emerge victorious!
+  - Lose 3 hearts and face defeat!
+  - Use the arrow keys to navigate your path.
 
   ![hướng dẫn](SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png)
 
