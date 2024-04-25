@@ -74,8 +74,7 @@
               "RelativeToolTip": "SDL_GAME_1\\Globals.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-23T07:53:32.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T07:53:32.987Z"
             },
             {
               "$type": "Document",
@@ -87,8 +86,7 @@
               "RelativeToolTip": "SDL_GAME_1\\BulletLogic.cpp",
               "ViewState": "AQIAAAwAAAAAAAAAAIBJwAQAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-22T15:30:24.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:30:24.322Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "SDL_GAME_1\\EnemyLogic.cpp",
               "ViewState": "AQIAAAwAAAAAAAAAAABRwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-22T15:27:46.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:27:46.814Z"
             },
             {
               "$type": "Document",
@@ -113,8 +110,7 @@
               "RelativeToolTip": "SDL_GAME_1\\GameFlow.cpp",
               "ViewState": "AQIAAOkAAAAAAAAAAAASwAEBAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-22T15:24:32.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:24:32.143Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "SDL_GAME_1\\EnemyLogic.h",
               "ViewState": "AQIAAAIAAAAAAAAAAAAjwAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-22T15:10:07.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:10:07.202Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "SDL_GAME_1\\BulletLogic.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-22T15:09:20.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:09:20.908Z"
             },
             {
               "$type": "Document",
@@ -165,8 +159,7 @@
               "RelativeToolTip": "SDL_GAME_1\\GameFlow.h",
               "ViewState": "AQIAAAUAAAAAAAAAAAAAwAsAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-22T15:08:05.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:08:05.203Z"
             },
             {
               "$type": "Document",
@@ -178,8 +171,7 @@
               "RelativeToolTip": "SDL_GAME_1\\GameLogic.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-22T15:19:18.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:19:18.473Z"
             },
             {
               "$type": "Document",
@@ -191,8 +183,7 @@
               "RelativeToolTip": "SDL_GAME_1\\GameLogic.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-22T15:07:17.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:07:17.368Z"
             },
             {
               "$type": "Document",
@@ -204,8 +195,7 @@
               "RelativeToolTip": "SDL_GAME_1\\GameRendering.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAjwAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-22T15:06:06.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-22T15:06:06.476Z"
             },
             {
               "$type": "Document",
@@ -217,8 +207,7 @@
               "RelativeToolTip": "GameObject.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-11T14:59:42.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:59:42.347Z"
             },
             {
               "$type": "Document",
@@ -230,8 +219,7 @@
               "RelativeToolTip": "main.cpp",
               "ViewState": "AQIAAD8AAAAAAAAAAAASwFcAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-04-11T14:39:02.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T14:39:02.773Z"
             }
           ]
         }
