@@ -1,5 +1,5 @@
 # Gun Battle
-
+- Link preview game :  
 ## Giới thiệu
 Gun Battle là một trò chơi bắn súng đơn giản được xây dựng bằng ngôn ngữ lập trình C++ và sử dụng thư viện đồ hoạ SDL. Trong trò chơi này, người chơi sẽ điều khiển một nhân vật và bắn hạ các kẻ địch để kiếm điểm.
 
@@ -30,7 +30,7 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
   - Lose 3 hearts and face defeat!
   - Use the arrow keys to navigate your path.
 
-  ![hướng dẫn](SDL_GAME_1/resources/Screenshot2024-04-06121850.png)
+ 
 
 - **Background Game Chính:**
   - File: `SDL_GAME_1/resources/new_bkground.png`
