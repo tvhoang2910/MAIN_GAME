@@ -23,24 +23,24 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
   ![bkgd_menu](SDL_GAME_1/resources/bkgd_menu.png)
 
 - **Background Hướng Dẫn:**
-  - File: `SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png
+  - File: `SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png`
   - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin : 
   -"Welcome to Gun Battle!"
   -"Reach 200 points to emerge victorious!"
   - "Lose 3 hearts and face defeat!"
   -"Use the arrow keys to navigate your path."
 
-  ![hướng dẫn](x64/Debug/Screenshot 2024-04-06 121850.png)
+  ![hướng dẫn](SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png)
 
 - **Background Game Chính:**
   - File: `SDL_GAME_1/resources/new_bkground.png`
   - Mô tả: Background chính trong trò chơi, nơi diễn ra các hoạt động chính của trò chơi.
-  ![game chính](x64/Debug/new_bkground.png)
+  ![game chính](SDL_GAME_1/resources/new_bkground.png)
 
 - **Background "End Game":**
   - File: `SDL_GAME_1/resources/bkground.bmp`
   - Mô tả: Background được hiển thị khi trò chơi kết thúc.
-  ![end game](x64/Debug/bkground.bmp)
+  ![end game](SDL_GAME_1/resources/bkground.bmp)
 
 - **Player:**
   - File: `SDL_GAME_1/resources/newbkground.png`
