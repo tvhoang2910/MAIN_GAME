@@ -18,12 +18,12 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
 
 ## Bắt đầu game
 - **Background Đầu Tiên (Menu):** 
-  - File: `x64/Debug/bkgd_menu.png`
+  - File: `SDL_GAME_1/resources/bkgd_menu.png`
   - Mô tả: Background này chứa các lựa chọn "Start" và "Exit" được viết bằng font.
-  ![bkgd_menu](x64/Debug/bkgd_menu.png)
+  ![bkgd_menu](SDL_GAME_1/resources/bkgd_menu.png)
 
 - **Background Hướng Dẫn:**
-  - File: `x64/Debug/Screenshot 2024-04-06 121850.png`
+  - File: `SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png
   - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin : 
   -"Welcome to Gun Battle!"
   -"Reach 200 points to emerge victorious!"
@@ -33,27 +33,27 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
   ![hướng dẫn](x64/Debug/Screenshot 2024-04-06 121850.png)
 
 - **Background Game Chính:**
-  - File: `x64/Debug/new_bkground.png`
+  - File: `SDL_GAME_1/resources/new_bkground.png`
   - Mô tả: Background chính trong trò chơi, nơi diễn ra các hoạt động chính của trò chơi.
   ![game chính](x64/Debug/new_bkground.png)
 
 - **Background "End Game":**
-  - File: `x64/Debug/bkground.bmp`
+  - File: `SDL_GAME_1/resources/bkground.bmp`
   - Mô tả: Background được hiển thị khi trò chơi kết thúc.
   ![end game](x64/Debug/bkground.bmp)
 
 - **Player:**
-  - File: `x64/Debug/newbkground.png`
+  - File: `SDL_GAME_1/resources/newbkground.png`
   - Mô tả: Hình ảnh đại diện cho nhân vật người chơi trong trò chơi.
 
 - **Enemies:**
-  - File: `x64/Debug/Enemies bkgrond.png`
+  - File: `SDL_GAME_1/resources/Enemies bkgrond.png`
   - Mô tả: Hình ảnh đại diện cho các kẻ địch trong trò chơi.
 
 - **Trái Tim:**
-  - File: `x64/Debug/heart.png`
+  - File: `SDL_GAME_1/resources/heart.png`
   - Mô tả: Hình ảnh đại diện cho trái tim, có thể liên quan đến số lượng mạng hoặc điểm số trong trò chơi.
 
 - **Đạn:**
-  - File: `x64/Debug/bullet_bkground.png`
+  - File: `SDL_GAME_1/resources/bullet_bkground.png`
   - Mô tả: Hình ảnh đại diện cho đạn trong trò chơi.
