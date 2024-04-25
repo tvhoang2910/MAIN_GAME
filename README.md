@@ -24,7 +24,12 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
 
 - **Background Hướng Dẫn:**
   - File: `x64/Debug/Screenshot 2024-04-06 121850.png`
-  - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi và có đếm ngược 10 giây cho người chơi đọc thông tin.
+  - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin : 
+  -"Welcome to Gun Battle!"
+  -"Reach 200 points to emerge victorious!"
+  - "Lose 3 hearts and face defeat!"
+  -"Use the arrow keys to navigate your path."
+
   ![hướng dẫn](x64/Debug/Screenshot 2024-04-06 121850.png)
 
 - **Background Game Chính:**
