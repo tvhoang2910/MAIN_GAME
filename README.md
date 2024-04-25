@@ -18,48 +18,56 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
 
 ## Bắt đầu game
 - **Background Đầu Tiên (Menu):** 
-  - File: `SDL_GAME_1/resources/bkgd_menu.png`
   - Mô tả: Background này chứa các lựa chọn "Start" và "Exit" được viết bằng font.
-  ![bkgd_menu](SDL_GAME_1/resources/bkgd_menu.png)
+  ![bkgd_menu](readme_photos/first_menu.png)
 
 - **Background Hướng Dẫn:**
-  - File: `SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png`
   - Mô tả: Background này được sử dụng để hướng dẫn người chơi về cách chơi trò chơi. Và có đếm ngược 10s cho người chơi đọc thông tin 
   - Welcome to Gun Battle!
   - Reach 200 points to emerge victorious!
   - Lose 3 hearts and face defeat!
   - Use the arrow keys to navigate your path.
-
+ ![image](readme_photos/Ins_menu.png)
  
 
 - **Background Game Chính:**
-  - File: `SDL_GAME_1/resources/new_bkground.png`
   - Mô tả: Background chính trong trò chơi, nơi diễn ra các hoạt động chính của trò chơi.
-  ![game chính](SDL_GAME_1/resources/new_bkground.png)
+  ![game chính](readme_photos/Main_menu.png)
 
 - **Background "End Game":**
-  - File: `SDL_GAME_1/resources/bkground.bmp`
   - Mô tả: Background được hiển thị khi trò chơi kết thúc.
-  ![end game](SDL_GAME_1/resources/bkground.bmp)
+  ![end game](readme_photos/end_menu.png)
 
-- **Player:**
-  - File: `SDL_GAME_1/resources/newbkground.png`
-  - Mô tả: Hình ảnh đại diện cho nhân vật người chơi trong trò chơi.
-
-- **Enemies:**
-  - File: `SDL_GAME_1/resources/Enemies bkgrond.png`
-  - Mô tả: Hình ảnh đại diện cho các kẻ địch trong trò chơi.
-
-- **Trái Tim:**
-  - File: `SDL_GAME_1/resources/heart.png`
-  - Mô tả: Hình ảnh đại diện cho trái tim, có thể liên quan đến số lượng mạng hoặc điểm số trong trò chơi.
-
-- **Đạn:**
-  - File: `SDL_GAME_1/resources/bullet_bkground.png`
-  - Mô tả: Hình ảnh đại diện cho đạn trong trò chơi.
 - ## Source code
-  - main.cpp : - Khởi tạo các đối tượng SDL cần thiết.
-               - Vào vòng lặp menu chính, vẽ menu và xử lý sự kiện click chuột.
-               - Hàm initializeSDL():
+  - main.cpp :
+  - - Khởi tạo các đối tượng SDL cần thiết.
+  - - Vào vòng lặp menu chính, vẽ menu và xử lý sự kiện click chuột.
+  - - Hàm initializeSDL():
   - Globals.h : Chứa các khai báo biến,mảng toàn cục và 1 số thư viện cần sử dụng.
+  - GameRendering.cpp :
+  - -  Hàm drawPlayer :lấy ảnh Player .
+  - -  Hàm drawBullets :lấy ảnh đạn .
+  - -  Hàm drawEnemies  :lấy ảnh địch .
+  - -  Hàm drawScore : dùng font để vẽ Score .
+  - -  Hàm drawHearts :lấy ảnh trái tim .
+  - GameLogic.cpp :
+  - - Hàm handleInput : Xử lí đầu vào (Nhấn phím , chuột).git r
+  - - Hàm movePlayer : Xử lí di chuyển của player.
+  - GameFlow.cpp :
+  - - Hàm cleanup : Giải phóng bộ nhớ .
+  - - Hàm runGameLoop : tách ra từ main để xử lí .
+  - - Hàm drawMenu : vẽ background đầu tiên (menu) .
+  - - Hàm countdownTimer : vẽ Background Hướng Dẫn.
+  - - Hàm drawEndGameMenu : vẽ Background "End Game" .
+  - EnemyLogic.cpp :
+  - - Xử lí sự xuất hiện ngẫu nhiên của địch
+  -  - xử lí di chuyển của địch.
+  - - Kiểm tra sự va chạm
+  - - Kiểm tra việc di chuyển của địch khiến trái tim bị biến mất
+  - BulletLogic.cpp :
+  - - Xử lí việc di chuyển và tần suất xuất hiện của đạn.
+  - - Kiểm tra va chạm
+ 
+ ## Cài đặt
+ - Unzip GameOfHoang.zip và chọn file .exe để chơi.
   
