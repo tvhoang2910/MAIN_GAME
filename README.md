@@ -30,7 +30,7 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
   - Lose 3 hearts and face defeat!
   - Use the arrow keys to navigate your path.
 
-  ![hướng dẫn](SDL_GAME_1/resources/Screenshot 2024-04-06 121850.png)
+  ![hướng dẫn](SDL_GAME_1/resources/Screenshot2024-04-06121850.png)
 
 - **Background Game Chính:**
   - File: `SDL_GAME_1/resources/new_bkground.png`
