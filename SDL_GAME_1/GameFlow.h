@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 #include <SDL_ttf.h>
-#include "D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include "GameObject.h"
 
 using namespace std;
 void cleanup(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font);

@@ -1,5 +1,5 @@
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
+#include "GameLogic.h"
+#include "Globals.h"
 void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {

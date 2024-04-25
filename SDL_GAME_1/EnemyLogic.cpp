@@ -1,7 +1,7 @@
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\EnemyLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\BulletLogic.h"
+#include "EnemyLogic.h"
+#include "GameLogic.h"
+#include "Globals.h"
+#include "BulletLogic.h"
 void spawnEnemy() {
     Enemy enemy;
     enemy.x = rand() % (SCREEN_WIDTH - 40); // Random dich xuat hien
@@ -69,3 +69,4 @@ void moveEnemiesAndCheckHearts(SDL_Renderer* renderer, int& numHeartsRemaining, 
         }
     }
 }
+ 

@@ -1,6 +1,6 @@
 #include"BulletLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
+#include "GameLogic.h"
+#include "Globals.h"
 void fireBullet() {
     static int bulletCooldown = 0;
     const int BULLET_COOLDOWN_TIME = 10; 

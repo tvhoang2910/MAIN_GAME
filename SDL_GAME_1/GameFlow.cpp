@@ -1,10 +1,10 @@
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameFlow.h"
+#include "GameFlow.h"
 
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\Globals.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\BulletLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\EnemyLogic.h"
-#include"D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameRendering.h"
+#include "GameLogic.h"
+#include "Globals.h"
+#include "BulletLogic.h"
+#include "EnemyLogic.h"
+#include "GameRendering.h"
 void cleanup(SDL_Window* window, SDL_Renderer* renderer, TTF_Font* font) {
     TTF_CloseFont(font);
     TTF_Quit();
@@ -54,13 +54,13 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
         if (numHeartsRemaining <= 0) {
             isRunning = false; 
             SDL_Color textColor = { 255, 255, 255 };
-            // Màu green
+            // Mï¿½u green
             TTF_SetFontSize(font, 50); 
             SDL_Surface* gameOverSurface = TTF_RenderText_Blended(font, "Game Over!", textColor);
             SDL_Texture* gameOverTexture = SDL_CreateTextureFromSurface(renderer, gameOverSurface);
             int textWidth, textHeight;
             SDL_QueryTexture(gameOverTexture, NULL, NULL, &textWidth, &textHeight);
-            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // V? trí ð? hi?n th? thông báo "Game Over"
+            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // V? trï¿½ ï¿½? hi?n th? thï¿½ng bï¿½o "Game Over"
             SDL_RenderCopy(renderer, gameOverTexture, NULL, &textRect);
             SDL_FreeSurface(gameOverSurface);
             SDL_DestroyTexture(gameOverTexture);
@@ -79,7 +79,7 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
             SDL_Texture* youWinTexture = SDL_CreateTextureFromSurface(renderer, youWinSurface);
             int textWidth, textHeight;
             SDL_QueryTexture(youWinTexture, NULL, NULL, &textWidth, &textHeight);
-            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // V? trí ð? hi?n th? thông báo "You Win"
+            SDL_Rect textRect = { (SCREEN_WIDTH - textWidth) / 2, (SCREEN_HEIGHT - textHeight) / 2, textWidth, textHeight }; // V? trï¿½ ï¿½? hi?n th? thï¿½ng bï¿½o "You Win"
             SDL_RenderCopy(renderer, youWinTexture, NULL, &textRect);
             SDL_FreeSurface(youWinSurface);
             SDL_DestroyTexture(youWinTexture);
@@ -98,7 +98,7 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
 
 void countdownTimer(SDL_Renderer* renderer, TTF_Font* font) {
     
-    SDL_Surface* backgroundSurface = IMG_Load("photos\\Screenshot 2024-04-06 121850.png");
+    SDL_Surface* backgroundSurface = IMG_Load("resources\\Screenshot 2024-04-06 121850.png");
     if (backgroundSurface == nullptr) {
         
         cerr << "Failed to load background image: " << IMG_GetError() << endl;
@@ -255,7 +255,7 @@ void drawEndGameMenu(SDL_Renderer* renderer, TTF_Font* font, bool& isRunning, Ga
     bool inEndGameMenu = true;
     SDL_Event event;
     int numHeartsRemaining;
-    const string backgroundImagePath = "photos\\bkground.bmp";
+    const string backgroundImagePath = "resources\\bkground.bmp";
 
     SDL_Surface* backgroundSurface = IMG_Load(backgroundImagePath.c_str());
     if (backgroundSurface == nullptr) {

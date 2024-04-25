@@ -1,8 +1,0 @@
-﻿  GameFlow.cpp
-D:\C++\Visual_studio\SDL_GAME_1\SDL_GAME_1\GameFlow.cpp(34,42): warning C4018: '>=': signed/unsigned mismatch
-  Generating code
-  1 of 396 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  SDL_GAME_1.vcxproj -> D:\C++\Visual_studio\SDL_GAME_1\x64\Release\SDL_GAME_1.exe

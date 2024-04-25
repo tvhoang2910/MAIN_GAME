@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 #include <SDL_ttf.h>
-#include "D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include "GameObject.h"
 
 
 void drawPlayer(SDL_Renderer* renderer, GameObject player, SDL_Texture* playerTexture);

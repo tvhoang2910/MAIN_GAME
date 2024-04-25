@@ -1,7 +1,7 @@
 
 #ifndef GLOBALS_H
 #define GLOBALS_H
-#include"D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include "GameObject.h"
 #include <iostream>
 #include <SDL.h>
 #include <vector>

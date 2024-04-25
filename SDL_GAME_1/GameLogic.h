@@ -2,7 +2,7 @@
 #define PLAYERLOGIC_H
 
 #include <SDL.h>
-#include "D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include "GameObject.h"
 
 
 void handleInput(SDL_Renderer* renderer, GameObject& player, bool& isRunning);

@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <vector>
 
-#include "D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include "GameObject.h"
 
 
 void spawnEnemy();

@@ -3,7 +3,7 @@
 #define BULLETLOGIC_H
 
 #include <SDL.h>
-#include"D:\C++\Visual_studio\SDL_GAME_1\GameObject.h"
+#include"GameObject.h"
 
 void fireBullet();
 void moveBullets();
