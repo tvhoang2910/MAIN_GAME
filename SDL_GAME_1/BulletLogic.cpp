@@ -3,7 +3,7 @@
 #include "Globals.h"
 void fireBullet() {
     static int bulletCooldown = 0;
-    const int BULLET_COOLDOWN_TIME = 10; 
+    const int BULLET_COOLDOWN_TIME = 20; 
 
     if (bulletCooldown > 0) {
         bulletCooldown--;

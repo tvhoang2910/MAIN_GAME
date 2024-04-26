@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
     TTF_Font* font;
     SDL_Texture* playerTexture;
     SDL_Texture* backgroundTexture;
-    const string backgroundImagePath = "resources\\bkgd_menu.png"; 
+    const string backgroundImagePath = "resources\\bkgd_menu.png"; //fisrt_bkgd
 
     initializeSDL(window, renderer, font, backgroundTexture, playerTexture);
 
@@ -85,18 +85,16 @@ void initializeSDL(SDL_Window*& window, SDL_Renderer*& renderer, TTF_Font*& font
     srand(static_cast<unsigned int>(time(NULL)));
 
    
-    SDL_Surface* backgroundSurface = IMG_Load("resources\\new_bkground.png");
-    // SDL_Surface* backgroundSurface = IMG_Load("new_bkground.png");
+    SDL_Surface* backgroundSurface = IMG_Load("resources\\new_bkground.png");                // main_bkgd
     backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
     SDL_FreeSurface(backgroundSurface);
 
-    SDL_Surface* playerSurface = IMG_Load("resources\\newbkground.png");
+    SDL_Surface* playerSurface = IMG_Load("resources\\newbkground.png");                     //player_bkgd
     playerTexture = SDL_CreateTextureFromSurface(renderer, playerSurface);
-    // SDL_Surface* heartSurface = IMG_Load("D:\\C++\\Visual_studio\\SDL_GAME_1\\x64\\Debug\\heart.png");
 
     std::cout << "Current path is " << std::filesystem::current_path() << '\n'; // (1)
 
-    SDL_Surface* heartSurface = IMG_Load("resources\\heart.png");
+    SDL_Surface* heartSurface = IMG_Load("resources\\heart.png");                               //heart
     if (heartSurface == nullptr) {
         cerr << "Failed to load heart image: " << IMG_GetError() << endl;
        

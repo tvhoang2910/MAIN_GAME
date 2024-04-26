@@ -8,14 +8,14 @@ void spawnEnemy() {
     enemy.y = 0;
     enemy.w = 60; // width
     enemy.h = 60; // height
-    enemies.push_back(enemy); // Thêm ð?ch vào vector enemies
+    enemies.push_back(enemy); 
 }
 void moveEnemies() {
     for (int i = 0; i < enemies.size(); i++) {
-        enemies[i].y += ENEMY_SPEED; // Di chuy?n ð?ch xu?ng dý?i theo hý?ng y
+        enemies[i].y += ENEMY_SPEED; 
         if (enemies[i].y > SCREEN_HEIGHT) {
-            enemies.erase(enemies.begin() + i); //out màn h?nh = > m?t
-            i--; // Gi?m ch? s? i ði 1 sau khi xóa ph?n t? 
+            enemies.erase(enemies.begin() + i); 
+            i--; 
         }
     }
 }

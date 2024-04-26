@@ -1,5 +1,5 @@
 # Gun Battle
-- Link preview game :  
+- Link preview game :  [youtube](https://youtu.be/8su-FWuEuZA)
 ## Giới thiệu
 Gun Battle là một trò chơi bắn súng đơn giản được xây dựng bằng ngôn ngữ lập trình C++ và sử dụng thư viện đồ hoạ SDL. Trong trò chơi này, người chơi sẽ điều khiển một nhân vật và bắn hạ các kẻ địch để kiếm điểm.
 
@@ -45,20 +45,20 @@ Các hình ảnh trong game tự thiết kế hoặc tìm ngẫu nhiên trên Go
   - - Hàm initializeSDL():
   - Globals.h : Chứa các khai báo biến,mảng toàn cục và 1 số thư viện cần sử dụng.
   - GameRendering.cpp :
-  - -  Hàm drawPlayer :lấy ảnh Player .
-  - -  Hàm drawBullets :lấy ảnh đạn .
-  - -  Hàm drawEnemies  :lấy ảnh địch .
-  - -  Hàm drawScore : dùng font để vẽ Score .
-  - -  Hàm drawHearts :lấy ảnh trái tim .
+  - -  Hàm drawPlayer() :lấy ảnh Player .
+  - -  Hàm drawBullets() :lấy ảnh đạn .
+  - -  Hàm drawEnemies () :lấy ảnh địch .
+  - -  Hàm drawScore() : dùng font để vẽ Score .
+  - -  Hàm drawHearts() :lấy ảnh trái tim .
   - GameLogic.cpp :
-  - - Hàm handleInput : Xử lí đầu vào (Nhấn phím , chuột).git r
-  - - Hàm movePlayer : Xử lí di chuyển của player.
+  - - Hàm handleInput() : Xử lí đầu vào (Nhấn phím , chuột).
+  - - Hàm movePlayer() : Xử lí di chuyển của player.
   - GameFlow.cpp :
-  - - Hàm cleanup : Giải phóng bộ nhớ .
-  - - Hàm runGameLoop : tách ra từ main để xử lí .
-  - - Hàm drawMenu : vẽ background đầu tiên (menu) .
-  - - Hàm countdownTimer : vẽ Background Hướng Dẫn.
-  - - Hàm drawEndGameMenu : vẽ Background "End Game" .
+  - - Hàm cleanup() : Giải phóng bộ nhớ .
+  - - Hàm runGameLoop() : tách ra từ main để xử lí .
+  - - Hàm drawMenu() : vẽ background đầu tiên (menu) .
+  - - Hàm countdownTimer() : vẽ Background Hướng Dẫn.
+  - - Hàm drawEndGameMenu() : vẽ Background "End Game" .
   - EnemyLogic.cpp :
   - - Xử lí sự xuất hiện ngẫu nhiên của địch
   -  - xử lí di chuyển của địch.

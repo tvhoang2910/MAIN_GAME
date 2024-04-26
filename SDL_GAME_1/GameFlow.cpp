@@ -98,7 +98,7 @@ void runGameLoop(SDL_Renderer* renderer, SDL_Window* window, TTF_Font* font, SDL
 
 void countdownTimer(SDL_Renderer* renderer, TTF_Font* font) {
     
-    SDL_Surface* backgroundSurface = IMG_Load("resources\\Screenshot 2024-04-06 121850.png");
+    SDL_Surface* backgroundSurface = IMG_Load("resources\\Screenshot 2024-04-06 121850.png"); //Ins_bkgd
     if (backgroundSurface == nullptr) {
         
         cerr << "Failed to load background image: " << IMG_GetError() << endl;
@@ -255,7 +255,7 @@ void drawEndGameMenu(SDL_Renderer* renderer, TTF_Font* font, bool& isRunning, Ga
     bool inEndGameMenu = true;
     SDL_Event event;
     int numHeartsRemaining;
-    const string backgroundImagePath = "resources\\bkground.bmp";
+    const string backgroundImagePath = "resources\\bkground.bmp";   // end_bkgd
 
     SDL_Surface* backgroundSurface = IMG_Load(backgroundImagePath.c_str());
     if (backgroundSurface == nullptr) {
